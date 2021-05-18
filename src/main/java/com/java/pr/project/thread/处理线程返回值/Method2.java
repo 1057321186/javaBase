@@ -8,7 +8,7 @@ public class Method2 implements Runnable{
 	private String value;
 	public static void main(String[] args) {
 		Method2 method2=new Method2();
-		Thread thread=new Thread(method2);
+		Thread thread = new Thread(method2);
 		thread.start();
 		while(method2.value==null){
 			try {

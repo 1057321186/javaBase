@@ -1,8 +1,12 @@
 package com.java.pr.project.collection.list;
 
+import com.java.pr.project.collection.Student;
+
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ListTest {
 		public static void main(String[] args) {
@@ -53,17 +57,18 @@ public class ListTest {
 			}
 		
 			
-			/*
+			/**
 			 * 1)系统中并不会为ArrayList<String>生成新的class文件，不会当做新的类进行处理。
 			 * 不管泛型参数的类型是什么，运行时都是对应的同一个class对象。
-			 * */			
+			 */
 			List<String> strList= new ArrayList();
 			List<Integer> intList = new ArrayList();
 			System.out.println(strList.getClass() == intList.getClass());
 			
-			/*
-			 * 2)不管泛型参数是什么类型，JVM都是当做同一个类进行处理，在内存中只占用一块内存空间，因此静态方法，代码块，静态变量不能使用泛型形参。
-			 * */
+			/**
+			 * 2)不管泛型参数是什么类型，JVM都是当做同一个类进行处理，
+			 * 在内存中只占用一块内存空间，因此静态方法，代码块，静态变量不能使用泛型形参。
+			 */
 //			public class Test<T>{
 //				   static T  info;
 //				   public static void bar(T t){}
